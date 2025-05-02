@@ -50,6 +50,100 @@
         tap-ms = <100>;
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        copy {
+            bindings = <&kp LG(C)>;
+            key-positions = <30 31>;
+        };
+
+        cut {
+            bindings = <&kp LG(X)>;
+            key-positions = <30 32>;
+        };
+
+        paste {
+            bindings = <&kp LG(V)>;
+            key-positions = <31 32>;
+        };
+
+        lpar {
+            bindings = <&kp LS(N9)>;
+            key-positions = <16 17>;
+        };
+
+        rpar {
+            bindings = <&kp LS(N0)>;
+            key-positions = <23 24>;
+        };
+
+        lsbrc {
+            bindings = <&kp LBKT>;
+            key-positions = <15 16>;
+        };
+
+        rsbrc {
+            bindings = <&kp RBKT>;
+            key-positions = <24 25>;
+        };
+
+        lcbrc {
+            bindings = <&kp LBRC>;
+            key-positions = <15 17>;
+        };
+
+        rcbrc {
+            bindings = <&kp RBRC>;
+            key-positions = <23 25>;
+        };
+
+        minus {
+            bindings = <&kp MINUS>;
+            key-positions = <8 9>;
+        };
+
+        equal {
+            bindings = <&kp EQUAL>;
+            key-positions = <9 10>;
+        };
+
+        plus {
+            bindings = <&kp PLUS>;
+            key-positions = <8 10>;
+        };
+
+        dqt {
+            bindings = <&kp DQT>;
+            key-positions = <37 38>;
+        };
+
+        sqt {
+            bindings = <&kp SQT>;
+            key-positions = <38 39>;
+        };
+
+        under {
+            bindings = <&kp UNDER>;
+            key-positions = <37 39>;
+        };
+
+        tilde {
+            bindings = <&kp TILDE>;
+            key-positions = <2 3>;
+        };
+
+        hash {
+            bindings = <&kp HASH>;
+            key-positions = <2 4>;
+        };
+
+        grv {
+            bindings = <&kp GRAVE>;
+            key-positions = <4 3>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
