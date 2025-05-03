@@ -48,7 +48,7 @@ layers:
   - {t: '$$mdi:keyboard-esc$$', h: fn}
   - {t: '$$mdi:keyboard-return$$', h: number}
   - {t: '$$mdi:backspace$$', h: number}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:backspace-reverse-outline$$
   symbol:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - F1
