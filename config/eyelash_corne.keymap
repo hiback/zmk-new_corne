@@ -193,9 +193,7 @@
                                          &lt 3 TAB          &ltf 1 SPACE  &lt 4 ESC                                                 &lt 2 ENTER  &ltf 2 BSPC   &kp DEL
             >;
 
-            // sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
-
-            sensor-bindings = <&inc_dec_kp N2 N1>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         layer_1 {
