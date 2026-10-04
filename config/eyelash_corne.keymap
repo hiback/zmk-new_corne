@@ -11,11 +11,10 @@
 #include <dt-bindings/zmk/rgb.h>
 
 #define L_BASE  0
-#define L_PTR   1
-#define L_NUM   2
+#define L_NUM   1
+#define L_FUNC  2
 #define L_NAV   3
 #define L_MEDIA 4
-#define L_FUNC  5
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
 
@@ -195,31 +194,31 @@
 &none  &kp Q            &kp W            &kp E              &kp R         &kp T                           &out OUT_BLE              &kp Y        &kp U         &kp I          &kp O             &kp P                &none
 &none  &hml LEFT_GUI A  &hml LEFT_ALT S  &hml LEFT_SHIFT D  &hml LCTRL F  &kp G               &bt BT_PRV  &out OUT_USB  &bt BT_NXT  &kp H        &hmr RCTRL J  &hmr RSHIFT K  &hmr RIGHT_ALT L  &hmr RIGHT_GUI SEMI  &none
 &none  &kp Z            &kp X            &kp C              &kp V         &kp B      &none                &bt BT_CLR                &kp N        &kp M         &kp COMMA      &kp DOT           &kp FSLH             &none
-                                         &lt L_NAV TAB      &ltf L_PTR SPACE  &lt L_MEDIA ESC                                         &kp DEL      &lt L_FUNC ENTER  &ltf L_NUM BSPC
+                                         &lt L_NAV TAB      &ltf L_NUM SPACE  &lt L_MEDIA ESC                                         &lt L_FUNC ENTER  &ltf L_FUNC BSPC  &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         layer_1 {
-            display-name = "pointer";
+            display-name = "number";
             bindings = <
-&none  &kp F1    &kp F2    &kp F3     &kp F4     &kp F5                             &mmv MOVE_UP                     &none       &kp LS(N1)  &kp LS(N2)  &kp LS(N7)  &kp F12       &none
-&none  &kp LGUI  &kp LALT  &kp LSHFT  &kp LCTRL  &kp F11            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LS(N8)  &mkp LCLK   &mkp MCLK   &mkp RCLK   &kp LS(BSLH)  &none
-&none  &kp F6    &kp F7    &kp F8     &kp F9     &kp F10  &kp C_MUTE                &mmv MOVE_DOWN                   &none       &kp LS(N5)  &kp LS(N6)  &kp LS(N4)  &kp BSLH      &none
-                           &none      &trans     &none                                                               &trans      &trans      &trans
+&none  &kp MINUS      &kp N7  &kp N8  &kp N9  &kp FSLH                                  &mmv MOVE_UP                     &none       &kp LS(N1)  &kp LS(N2)  &kp LS(N7)  &kp PRINTSCREEN  &none
+&none  &kp N0         &kp N4  &kp N5  &kp N6  &kp DOT                   &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LS(N8)  &mkp LCLK   &mkp MCLK   &mkp RCLK   &kp LS(BSLH)     &none
+&none  &kp LS(EQUAL)  &kp N1  &kp N2  &kp N3  &kp LS(N8)  &kp C_MUTE                    &mmv MOVE_DOWN                   &none       &kp LS(N5)  &kp LS(N6)  &kp LS(N4)  &kp BSLH         &none
+                              &trans  &trans  &trans                                                                     &trans      &trans      &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
         };
 
         layer_2 {
-            display-name = "number";
+            display-name = "function";
             bindings = <
-&none  &kp MINUS      &kp N7  &kp N8  &kp N9  &kp FSLH                                  &mmv MOVE_UP                     &none   &none      &none      &none     &none     &none
-&none  &kp N0         &kp N4  &kp N5  &kp N6  &kp DOT                   &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &none   &kp RCTRL  &kp RSHFT  &kp RALT  &kp RGUI  &none
-&none  &kp LS(EQUAL)  &kp N1  &kp N2  &kp N3  &kp LS(N8)  &kp C_MUTE                    &mmv MOVE_DOWN                   &none   &kp F13    &kp F14    &kp F15   &none     &none
-                              &trans  &trans  &trans                                                                     &trans  &trans     &trans
+&none  &kp F12  &kp F7  &kp F8  &kp F9  &none                                     &mmv MOVE_UP                     &none   &none      &none      &none     &none     &none
+&none  &kp F11  &kp F4  &kp F5  &kp F6  &kp DELETE                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &none   &kp RCTRL  &kp RSHFT  &kp RALT  &kp RGUI  &none
+&none  &kp F10  &kp F1  &kp F2  &kp F3  &none       &kp C_MUTE                    &mmv MOVE_DOWN                   &none   &kp F13    &kp F14    &kp F15   &none     &none
+                        &trans  &trans  &trans                                                                     &trans  &trans     &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -231,7 +230,7 @@
 &none  &none     &none     &none      &none      &none                                 &mmv MOVE_UP                     &kp HOME    &kp PAGE_DOWN      &kp PG_UP        &kp END     &kp C_MUTE        &none
 &none  &kp LGUI  &kp LALT  &kp LSHFT  &kp LCTRL  &none                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT    &kp DOWN           &kp UP           &kp RIGHT   &kp DELETE        &none
 &none  &none     &none     &none      &none      &none   &kp C_MUTE                    &mmv MOVE_DOWN                   &kp C_PREV  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_NEXT  &kp C_PLAY_PAUSE  &none
-                           &trans     &none      &none                                                                  &trans      &kp ENTER          &kp BSPC
+                           &trans     &trans     &trans                                                                 &kp ENTER   &kp BSPC           &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -247,18 +246,6 @@
 
             sensor-bindings = <&scroll_encoder>;
             label = "fn";
-        };
-
-        layer_5 {
-            display-name = "function";
-            bindings = <
-&none  &kp F12  &kp F7  &kp F8  &kp F9  &kp PSCRN                                   &mmv MOVE_UP                     &none   &none      &none      &none     &none     &none
-&none  &kp F11  &kp F4  &kp F5  &kp F6  &kp SCROLLLOCK              &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &none   &kp RCTRL  &kp RSHFT  &kp RALT  &kp RGUI  &none
-&none  &kp F10  &kp F1  &kp F2  &kp F3  &kp PAUSE_BREAK  &kp C_MUTE                &mmv MOVE_DOWN                   &none   &none      &none      &none     &none     &none
-                        &none   &none   &none                                                                        &none   &trans     &none
-            >;
-
-            sensor-bindings = <&scroll_encoder>;
         };
     };
 };
